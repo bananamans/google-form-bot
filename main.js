@@ -28,9 +28,16 @@ function myFunction() {
       if (item.getType() === FormApp.ItemType.TEXT ) {
         var textItem = item.asTextItem();
 
-        var itemResponse = textItem.createResponse("IS");   
-        formResponse.withItemResponse(itemResponse);
-        
+        if (textItem.getTitle() === "Age" || textItem.getTitle() === "2. Age") {
+          var min = 19;
+          var max = 25;
+          var randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
+          var itemResponse = textItem.createResponse(randomValue.toString());
+          formResponse.withItemResponse(itemResponse);
+          return;
+        }
+        var itemResponse = textItem.createResponse("IS");
+        formResponse.withItemResponse(itemResponse); 
       }
     
       if (item.getType() === FormApp.ItemType.GRID) {
