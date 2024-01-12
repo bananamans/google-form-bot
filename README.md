@@ -7,4 +7,4 @@ Instructions
 
 Notes
 1. The choices made by the bot are completely random
-2. The code may require modification to tailored to your google form.
+2. The code may require modification to work for your google form.
